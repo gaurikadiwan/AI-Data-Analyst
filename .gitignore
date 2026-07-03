@@ -1,0 +1,117 @@
+# ==========================================================
+# AI Data Analyst - .gitignore
+# ==========================================================
+
+# ----------------------------------------------------------
+# Python
+# ----------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+build/
+dist/
+pip-wheel-metadata/
+
+# Python caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# ----------------------------------------------------------
+# Virtual Environments
+# ----------------------------------------------------------
+venv/
+.venv/
+env/
+ENV/
+
+# ----------------------------------------------------------
+# Environment Variables & Secrets
+# ----------------------------------------------------------
+.env
+.env.*
+!.env.example
+!backend/.env.example
+
+# Flask
+.flaskenv
+
+# ----------------------------------------------------------
+# Databases
+# ----------------------------------------------------------
+*.db
+*.sqlite
+*.sqlite3
+instance/
+backend/instance/
+
+# ----------------------------------------------------------
+# Generated Data
+# ----------------------------------------------------------
+backend/uploads/
+backend/vector_store/
+backend/utils/chroma_storage/
+backend/logs/
+
+# Ignore generated charts but keep folder
+backend/charts/*
+!backend/charts/.gitkeep
+
+# ----------------------------------------------------------
+# Logs
+# ----------------------------------------------------------
+*.log
+logs/
+
+# ----------------------------------------------------------
+# Node / React / Vite
+# ----------------------------------------------------------
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+
+# Keep package-lock.json if you want reproducible builds.
+# Delete the next line if you want to commit it.
+frontend/package-lock.json
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ----------------------------------------------------------
+# IDE
+# ----------------------------------------------------------
+.vscode/
+.idea/
+
+*.swp
+*.swo
+*~
+
+.history/
+
+# ----------------------------------------------------------
+# Operating System
+# ----------------------------------------------------------
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ----------------------------------------------------------
+# GitHub
+# ----------------------------------------------------------
+.github/.DS_Store
+
+# ----------------------------------------------------------
+# Misc
+# ----------------------------------------------------------
+*.bak
+*.tmp
+*.temp
