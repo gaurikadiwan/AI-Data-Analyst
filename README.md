@@ -1,6 +1,6 @@
 # AI Data Analyst
 
-Upload a CSV. Get instant KPIs, charts, and natural language insights — powered by local LLMs and pandas.
+Upload a CSV. Get instant KPIs, charts, and natural language insights - powered by local LLMs and pandas.
 
 This is a full-stack application that separates **computation** (pandas) from **interpretation** (LLM). No data is sent to external APIs. Everything runs locally via Ollama.
 
@@ -8,18 +8,18 @@ This is a full-stack application that separates **computation** (pandas) from **
 
 ## Features
 
-- **CSV Upload & Auto-Profiling** — Upload any CSV. Column types, missing values, outliers, and data quality scores are computed immediately.
-- **AI-Powered Insights** — pandas computes all metrics; the LLM only summarizes. Zero hallucination risk for numerical data.
-- **Natural Language Q&A** — Ask questions about your data in plain English. Gets answered from pre-computed aggregates.
-- **Multi-Model Support** — Switch between TinyLlama, Phi-3, or Qwen2.5-Coder without restarting.
-- **Model Comparison** — Compare responses and latency across models for the same question.
-- **Data Quality Scoring** — Detects duplicate rows, missing values, outliers, truncated data, and case-insensitive column collisions.
-- **Auto-Generated Charts** — Bar charts (regions), line charts (trends), pie charts (distributions) via matplotlib.
-- **PDF Export** — Export insights, KPIs, recommendations, and charts as a single PDF.
-- **Agent Workflow Visualization** — Real-time pipeline status with polling-based UI updates.
-- **JWT Authentication** — Signup, login, and token-based protected routes.
-- **Analysis History** — Per-user history of uploaded files and Q&A sessions.
-- **Docker Support** — Multi-container orchestration with PostgreSQL, Flask, and Vite dev server.
+- **CSV Upload & Auto-Profiling** - Upload any CSV. Column types, missing values, outliers, and data quality scores are computed immediately.
+- **AI-Powered Insights** - pandas computes all metrics; the LLM only summarizes. Zero hallucination risk for numerical data.
+- **Natural Language Q&A** - Ask questions about your data in plain English. Gets answered from pre-computed aggregates.
+- **Multi-Model Support** - Switch between TinyLlama, Phi-3, or Qwen2.5-Coder without restarting.
+- **Model Comparison** - Compare responses and latency across models for the same question.
+- **Data Quality Scoring** - Detects duplicate rows, missing values, outliers, truncated data, and case-insensitive column collisions.
+- **Auto-Generated Charts** - Bar charts (regions), line charts (trends), pie charts (distributions) via matplotlib.
+- **PDF Export** - Export insights, KPIs, recommendations, and charts as a single PDF.
+- **Agent Workflow Visualization** - Real-time pipeline status with polling-based UI updates.
+- **JWT Authentication** - Signup, login, and token-based protected routes.
+- **Analysis History** - Per-user history of uploaded files and Q&A sessions.
+- **Docker Support** - Multi-container orchestration with PostgreSQL, Flask, and Vite dev server.
 
 ---
 
@@ -70,9 +70,9 @@ pandas: detect_columns() → generate_kpis() → group_by_region/dept/month() �
 ```
 
 This guarantees:
-- **Zero numerical hallucination** — the LLM cannot invent numbers it didn't receive
-- **Deterministic results** — same CSV always produces identical KPIs and charts
-- **Fast answers** — common questions (top regions, trends, distributions) are answered from cached aggregates without an LLM call
+- **Zero numerical hallucination** - the LLM cannot invent numbers it didn't receive
+- **Deterministic results** - same CSV always produces identical KPIs and charts
+- **Fast answers** - common questions (top regions, trends, distributions) are answered from cached aggregates without an LLM call
 
 ### Project Structure
 
@@ -90,10 +90,10 @@ backend/                     # Flask application
 │   ├── upload.py            # Upload tracking model
 │   └── analysis_history.py  # Q&A session history model
 ├── routes/
-│   ├── auth_routes.py       # /api/auth/* — signup, login, profile
-│   ├── upload_routes.py     # /api/uploads/* — CSV upload, list
-│   ├── analysis_routes.py   # /api/analysis/* — insights, QA, quality, charts, models
-│   └── history_routes.py    # /api/history/* — user analysis history
+│   ├── auth_routes.py       # /api/auth/* - signup, login, profile
+│   ├── upload_routes.py     # /api/uploads/* - CSV upload, list
+│   ├── analysis_routes.py   # /api/analysis/* - insights, QA, quality, charts, models
+│   └── history_routes.py    # /api/history/* - user analysis history
 ├── services/
 │   ├── analysis_service.py  # Core pandas pipeline (KPI, aggregation, stats)
 │   ├── ai_service.py        # LLM orchestration with caching, retry, safety guard
@@ -235,22 +235,22 @@ _(Add screenshots of the dashboard, Q&A interface, agent workflow visualization,
 ## Use Cases
 
 - **Business analysts** who want quick insights from CSV exports without writing SQL or Python
-- **Data exploration** — upload an unfamiliar dataset and get an immediate summary of structure, quality, and key metrics
-- **LLM evaluation** — compare TinyLlama, Phi-3, and Qwen2.5-Coder on data interpretation tasks
-- **Educational** — demonstrates the "pandas computes, LLM explains" pattern for reliable AI-assisted analytics
+- **Data exploration** - upload an unfamiliar dataset and get an immediate summary of structure, quality, and key metrics
+- **LLM evaluation** - compare TinyLlama, Phi-3, and Qwen2.5-Coder on data interpretation tasks
+- **Educational** - demonstrates the "pandas computes, LLM explains" pattern for reliable AI-assisted analytics
 
 ---
 
 ## Future Improvements
 
-- [ ] **Large file streaming** — process datasets exceeding available memory via chunked pandas read
-- [ ] **Custom visualization** — allow users to specify chart type and axes
-- [ ] **Conversation memory** — persistent per-session chat across page reloads
-- [ ] **Multi-file workspaces** — upload and compare multiple datasets
-- [ ] **SQL export** — generate SQL queries from natural language questions
-- [ ] **Scheduled analysis** — periodic re-analysis of updated data sources
-- [ ] **Role-based access** — admin, analyst, viewer permission levels
-- [ ] **API token management** — programmatic access for external tools
+- [ ] **Large file streaming** - process datasets exceeding available memory via chunked pandas read
+- [ ] **Custom visualization** - allow users to specify chart type and axes
+- [ ] **Conversation memory** - persistent per-session chat across page reloads
+- [ ] **Multi-file workspaces** - upload and compare multiple datasets
+- [ ] **SQL export** - generate SQL queries from natural language questions
+- [ ] **Scheduled analysis** - periodic re-analysis of updated data sources
+- [ ] **Role-based access** - admin, analyst, viewer permission levels
+- [ ] **API token management** - programmatic access for external tools
 
 ---
 
