@@ -178,7 +178,7 @@ All endpoints return a consistent JSON envelope:
 - Python 3.10+
 - Node.js 18+
 - [Ollama](https://ollama.ai) installed and running
-- At least one model pulled: `ollama pull tinyllama`
+- At least one ollama model pulled
 
 ### Quick Start (Local)
 
