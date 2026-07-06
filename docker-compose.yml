@@ -1,0 +1,62 @@
+version: "3.9"
+
+services:
+
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: ai_data_analyst
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    restart: unless-stopped
+
+    depends_on:
+      - db
+
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/ai_data_analyst
+      FLASK_SECRET_KEY: ${FLASK_SECRET_KEY:-change-me}
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:-change-me}
+      OLLAMA_BASE_URL: http://host.docker.internal:11434
+      OLLAMA_MODEL: ollama_model
+
+    ports:
+      - "5000:5000"
+
+    volumes:
+      - backend_uploads:/app/uploads
+      - backend_charts:/app/charts
+      - backend_logs:/app/logs
+
+  frontend:
+    image: node:20-alpine
+
+    working_dir: /app
+
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
+
+    ports:
+      - "5173:5173"
+
+    volumes:
+      - ./frontend:/app
+
+    depends_on:
+      - backend
+
+volumes:
+  pgdata:
+  backend_uploads:
+  backend_charts:
+  backend_logs:
