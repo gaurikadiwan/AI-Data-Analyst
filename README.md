@@ -212,26 +212,6 @@ python sample_data.py
 ```
 
 ---
-
-## Screenshots
-
-_(Add screenshots of the dashboard, Q&A interface, agent workflow visualization, and chart views here.)_
-
-| View | Description |
-|---|---|
-| Upload | CSV upload with drag-and-drop |
-| Profiling | Column types, missing values, quality score, correlations |
-| KPIs | Total sales, average sale, top region/department |
-| Insights | AI-generated natural language summary |
-| Q&A | Chat-style interface with model comparison |
-| Charts | Bar, line, and pie chart visualizations |
-| Data Quality | Scoring, issues, severity classification |
-| Recommendations | Business recommendations from LLM |
-| Agent Workflow | Real-time pipeline visualization |
-| Architecture | System component overview |
-
----
-
 ## Use Cases
 
 - **Business analysts** who want quick insights from CSV exports without writing SQL or Python
